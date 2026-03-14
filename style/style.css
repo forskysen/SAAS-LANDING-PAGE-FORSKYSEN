@@ -708,8 +708,8 @@ section {
     }
 
     .card__price, .card__about, .card__rewiews, .card__location {
-        width: 100%;
-        max-width: 100%;
+        width: 87%;
+        max-width: 96%;
         padding: 30px 20px;
     }
 
