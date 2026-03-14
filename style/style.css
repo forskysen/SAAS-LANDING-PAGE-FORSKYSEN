@@ -656,37 +656,93 @@ section {
     }
 }
 
-@media (max-width: 618px) {
-    .container__about {
-        max-width: 550px;
+/* --- АДАПТИВНАЯ ВЕРСТКА --- */
+
+@media (max-width: 1024px) {
+    /* Планшеты: карточки цен и локаций переходят в 2 колонки */
+    .card__price__container, .grid__locations {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    .card__price:nth-child(2) {
+        transform: scale(1); /* Убираем увеличение, чтобы не мешало соседям */
     }
 
-    .card__about__text {
-        font-size: 0.7rem;
+    .container__card__about {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 768px) {
+    section {
+        padding: 60px 20px;
+    }
+
+    .nav__bar a {
+        padding: 8px 15px;
+        font-size: 0.8rem;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    .hero__title {
+        font-size: 2.2rem;
+    }
+
+    .container__hero {
+        padding: 40px 20px;
+    }
+
+    .card__price__container, 
+    .grid__locations, 
+    .card__container__rewiews,
+    .container__card__about {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .card__price, .card__about, .card__rewiews, .card__location {
+        width: 100%;
+        max-width: 100%;
+        padding: 30px 20px;
+    }
+
+    .card__about {
+        padding: 20px;
+    }
+
+    .container__footer__one__stroke {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .container__footer__two__stroke {
+        margin-top: 40px;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero__title {
+        font-size: 1.8rem;
+    }
+
+    .nav__bar {
+        gap: 5px;
+    }
+
+    .nav__bar a {
+        padding: 6px 10px;
     }
 
     .card__about__information {
-        font-size: 1.1rem;
+        font-size: 1.5rem;
     }
-
-    .card__container__rewiews {
-        display: grid;
-        grid-template-columns: 1fr;
-    }
-
-    .grid__locations {
-        display: grid;
-        grid-template-columns: 1fr;
-    }
-
 }
-
-/* .container__card__about {
-    display: flex;
-    gap: 25px;
-    justify-content: center;
-    margin-top: 20px;
-    max-width: 800px;
-    max-height: 300px;
-    
-} */
